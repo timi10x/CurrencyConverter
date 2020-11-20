@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CurrencyConverter</string>
+    <string name="sign_up">Sign up</string>
+    <string name="currency_converter">Currency\nCalculator</string>
+    <string name="dot">.</string>
+    <string name="eur">EUR</string>
+    <string name="pln">PLN</string>
+    <string name="hint">input value here</string>
+</resources>
