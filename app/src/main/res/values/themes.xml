@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.CurrencyConverter" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.CurrencyConverter" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/btn_color</item>
@@ -50,6 +50,11 @@
         <item name="spark_scrubEnabled">true</item>
 
         <item name="spark_animateChanges">true</item>
+    </style>
+
+    <!-- progress bar style -->
+    <style name="progressBarStyle" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/btn_color</item>
     </style>
 
 </resources>

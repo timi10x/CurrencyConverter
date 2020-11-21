@@ -83,13 +83,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatEditText
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_height="match_parent"
                     android:background="@drawable/edit_text_bg"
-                    android:hint="@string/hint"
                     android:textColor="@color/black"
+                    android:padding="16dp"
+                    android:text="@string/eur_value"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -198,7 +198,7 @@
                             android:layout_margin="10dp"
                             android:layout_marginEnd="145dp"
                             android:text="@string/eur"
-                            android:textColor="?android:textColorPrimary"
+                            android:textColor="#d7d7d7"
                             android:textSize="16sp"
                             app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
                             app:layout_constraintEnd_toStartOf="@+id/appCompatImageView2"
@@ -263,7 +263,7 @@
                             android:layout_margin="10dp"
                             android:layout_marginEnd="145dp"
                             android:text="@string/pln"
-                            android:textColor="?android:textColorPrimary"
+                            android:textColor="#d7d7d7"
                             android:textSize="16sp"
                             app:layout_constraintBottom_toBottomOf="@+id/pln_image"
                             app:layout_constraintEnd_toStartOf="@+id/pln_spinner_img"
@@ -341,12 +341,14 @@
             android:id="@+id/mid_market_view"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/eur_card"
-            app:layout_constraintStart_toStartOf="@+id/eur_card"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/convert_btn"
+            app:layout_constraintStart_toStartOf="@+id/convert_btn"
             app:layout_constraintTop_toBottomOf="@+id/convert_btn">
 
             <androidx.constraintlayout.widget.ConstraintLayout
