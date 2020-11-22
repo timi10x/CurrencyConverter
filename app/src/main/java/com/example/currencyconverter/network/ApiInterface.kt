@@ -1,4 +1,4 @@
-package com.example.currencyconverter.newtwork
+package com.example.currencyconverter.network
 
 import com.example.currencyconverter.models.CurrencyModel
 import com.example.currencyconverter.utils.value

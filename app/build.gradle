@@ -101,6 +101,7 @@ dependencies {
 
     //graph chart
     implementation 'com.robinhood.spark:spark:1.2.0'
+    implementation 'com.github.JastAir:Android-BackgroundChart:1.0.1-alpha'
 
 
     testImplementation 'junit:junit:4.+'

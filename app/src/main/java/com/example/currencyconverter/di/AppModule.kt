@@ -1,8 +1,8 @@
 package com.example.currencyconverter.di
 
 import android.content.Context
-import com.example.currencyconverter.newtwork.ApiInterface
-import com.example.currencyconverter.newtwork.CurrencyRemoteDataSource
+import com.example.currencyconverter.network.ApiInterface
+import com.example.currencyconverter.network.CurrencyRemoteDataSource
 import com.example.currencyconverter.room.dao.CurrencyDao
 import com.example.currencyconverter.room.database.AppDatabase
 import com.example.currencyconverter.room.repository.CurrencyRepository

@@ -40,12 +40,29 @@
             android:id="@+id/sparkView"
             style="@style/MySparkViewStyle"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/black"
+            android:layout_height="180dp"
+            android:layout_marginTop="80dp"
+            android:elevation="10dp"
+            android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tabLayout"
             app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+        <com.fdev.backgroundchart.GradientChart
+            android:id="@+id/gradientChart"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:plusColorStart="@color/blue"
+            app:plusColorEnd="#90CAF9"
+            app:minusColorStart="#90CAF9"
+            app:minusColorEnd="@color/blue"
+            app:zoom="10"
+            app:isBezier="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tabLayout"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/mail_text"

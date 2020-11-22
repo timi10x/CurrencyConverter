@@ -1,4 +1,4 @@
-package com.example.currencyconverter.newtwork
+package com.example.currencyconverter.network
 
 class CurrencyRemoteDataSource(private val apiInterface: ApiInterface) : BaseDataSource() {
 

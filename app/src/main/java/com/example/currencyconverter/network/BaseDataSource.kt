@@ -1,4 +1,4 @@
-package com.example.currencyconverter.newtwork
+package com.example.currencyconverter.network
 
 import com.example.currencyconverter.utils.Resource
 import retrofit2.Response
