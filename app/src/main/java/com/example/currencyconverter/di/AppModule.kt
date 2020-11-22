@@ -21,6 +21,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(ApplicationComponent::class)
 object AppModule {
+    /*This appModule object, provide a single instance and
+     tells Hilt what type the function provides instances of,
+    The function parameters tell Hilt the dependencies of the corresponding type.
+    The function body tells Hilt how to provide an instance of the corresponding type.
+    Hilt executes the function body every time it needs to provide an instance of that type*/
 
     @Provides
     fun provideBaseUrl() = BASE_URL

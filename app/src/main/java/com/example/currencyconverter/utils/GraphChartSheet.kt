@@ -13,11 +13,6 @@ import com.robinhood.spark.SparkView
 
 class GraphChartSheet : RoundedBottomSheetDialog() {
 
-    private var callback: Callback? = null
-    fun setCallback(callback: Callback?) {
-        this.callback = callback
-    }
-
     private lateinit var binding: BottomSheetChartBinding
 
     override fun onCreateView(
@@ -31,19 +26,16 @@ class GraphChartSheet : RoundedBottomSheetDialog() {
                 dismiss()
             }
 
+            //gives a pre plotted-like view for the chart background
             gradientChart.chartValues = arrayOf(
                 5f, 25f, 16f, 5f, 8f
             )
 
+            //setting up spark graph adapter
             sparkView.adapter = SparkAdapter(floatArrayOf(5f))
 
         }
         return binding.root
-    }
-
-
-    interface Callback {
-        fun onCompleted()
     }
 
     companion object {
