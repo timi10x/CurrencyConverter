@@ -1,14 +1,20 @@
-package com.example.currencyconverter.database
+package com.example.currencyconverter.room.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.example.currencyconverter.models.CurrencyModel
+import com.example.currencyconverter.room.dao.CurrencyDao
+import com.example.currencyconverter.utils.Converters
 import com.example.currencyconverter.utils.DB_NAME
 
 @Database(entities = [CurrencyModel::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
+
+    abstract fun currencyDao(): CurrencyDao
 
     companion object {
         @Volatile
