@@ -1,13 +1,14 @@
 package com.example.currencyconverter.utils
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import com.example.currencyconverter.R
 import com.example.currencyconverter.databinding.BottomSheetChartBinding
 import com.example.currencyconverter.ui.adapter.SparkAdapter
-import com.robinhood.spark.SparkView.OnScrubListener
+import com.robinhood.spark.SparkView
 
 
 class GraphChartSheet : RoundedBottomSheetDialog() {
@@ -35,14 +36,7 @@ class GraphChartSheet : RoundedBottomSheetDialog() {
             )
 
             sparkView.adapter = SparkAdapter(floatArrayOf(5f))
-            /*sparkView.scrubListener = OnScrubListener { value ->
-                scrubInfoTextView.setText(
-                    getString(
-                        R.string.scrub_format,
-                        value
-                    )
-                )
-            }*/
+
         }
         return binding.root
     }

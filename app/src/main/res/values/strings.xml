@@ -12,4 +12,5 @@
     <string name="past_90_days">Past 90 days</string>
     <string name="get_rate_text"><u>Get rate alerts straight to your email inbox</u></string>
     <string name="eur_value">1</string>
+    <string name="graph_text">15 Jun\n1 EUR = 4.242</string>
 </resources>
