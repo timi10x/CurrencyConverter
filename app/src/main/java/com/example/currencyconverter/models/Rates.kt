@@ -1,19 +1,24 @@
 package com.example.currencyconverter.models
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-data class Rates(
+class Rates : Serializable{
+    @SerializedName("USD")
+    var uSD: Double = Double.MIN_VALUE
+
+    @SerializedName("AUD")
+    var aUD: Double = Double.MIN_VALUE
+
+    @SerializedName("CAD")
+    var cAD: Double = Double.MIN_VALUE
+
     @SerializedName("PLN")
-    val pLN: Double? = null
-)
+    var pLN: Double = Double.MIN_VALUE
 
-/*@SerializedName("USD")
-   val uSD: Double? = null,
-   @SerializedName("AUD")
-   val aUD: Double? = null,
-   @SerializedName("CAD")
-   val cAD: Double? = null,
-   @SerializedName("PLN")
-   val pLN: Double? = null,
-   @SerializedName("MXN")
-   val mNX: Double? = null*/
+    @SerializedName("MXN")
+    var mNX: Double = Double.MIN_VALUE
+}
+
+
+

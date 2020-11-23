@@ -124,7 +124,7 @@
                     android:layout_marginEnd="16dp"
                     android:gravity="center"
                     android:text="@string/pln"
-                    android:textColor="#d7d7d7"
+                    android:textColor="@color/light_grey"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -345,8 +345,6 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="25dp"
-            android:layout_marginBottom="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/convert_btn"
             app:layout_constraintStart_toStartOf="@+id/convert_btn"
             app:layout_constraintTop_toBottomOf="@+id/convert_btn">
@@ -376,6 +374,18 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+        <FrameLayout
+            android:id="@+id/rates_graph_container"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:layout_marginTop="33dp"
+            android:background="@drawable/bottom_sheet_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mid_market_view">
+
+            <include layout="@layout/bottom_sheet_chart"/>
+        </FrameLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

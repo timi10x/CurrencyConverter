@@ -32,7 +32,7 @@ class GraphChartSheet : RoundedBottomSheetDialog() {
             )
 
             //setting up spark graph adapter
-            sparkView.adapter = SparkAdapter(floatArrayOf(5f))
+            sparkView.adapter = SparkAdapter(floatArrayOf(5f, 10f, 25f, 20f))
 
         }
         return binding.root
@@ -42,4 +42,5 @@ class GraphChartSheet : RoundedBottomSheetDialog() {
         val instance: GraphChartSheet
             get() = GraphChartSheet()
     }
+
 }

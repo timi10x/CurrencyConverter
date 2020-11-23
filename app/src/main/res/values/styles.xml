@@ -1,19 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.CurrencyConverter" parent="Theme.MaterialComponents.NoActionBar">
-        <!-- Primary brand color. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/btn_color</item>
         <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/white</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
 
-        <item name="spark_SparkViewStyle">@style/MySparkViewStyle</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>
 
     <!-- TabLayout Theme -->
@@ -37,7 +30,7 @@
     <!-- ********************************END***************************************************- -->
 
     <style name="MySparkViewStyle" parent="@style/spark_SparkView">
-        <item name="spark_lineColor">@color/spark_line_color</item>
+        <item name="spark_lineColor">@color/blue</item>
         <item name="spark_lineWidth">@dimen/spark_base_line_width</item>
         <item name="spark_cornerRadius">@dimen/spark_corner_radius</item>
         <item name="spark_fill">false</item>
