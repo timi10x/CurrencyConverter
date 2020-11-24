@@ -4,11 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.example.currencyconverter.R
 import com.example.currencyconverter.databinding.BottomSheetChartBinding
-import com.example.currencyconverter.ui.adapter.SparkAdapter
-import com.robinhood.spark.SparkView
 
 
 class GraphChartSheet : RoundedBottomSheetDialog() {
@@ -30,9 +26,6 @@ class GraphChartSheet : RoundedBottomSheetDialog() {
             gradientChart.chartValues = arrayOf(
                 5f, 25f, 16f, 5f, 8f
             )
-
-            //setting up spark graph adapter
-            sparkView.adapter = SparkAdapter(floatArrayOf(5f, 10f, 25f, 20f))
 
         }
         return binding.root

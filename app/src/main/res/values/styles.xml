@@ -29,22 +29,6 @@
 
     <!-- ********************************END***************************************************- -->
 
-    <style name="MySparkViewStyle" parent="@style/spark_SparkView">
-        <item name="spark_lineColor">@color/blue</item>
-        <item name="spark_lineWidth">@dimen/spark_base_line_width</item>
-        <item name="spark_cornerRadius">@dimen/spark_corner_radius</item>
-        <item name="spark_fill">false</item>
-
-        <item name="spark_baseLineColor">@color/spark_base_line_color</item>
-        <item name="spark_baseLineWidth">@dimen/spark_base_line_width</item>
-
-        <item name="spark_scrubLineColor">@color/spark_scrub_line_color</item>
-        <item name="spark_scrubLineWidth">@dimen/spark_scrub_line_width</item>
-        <item name="spark_scrubEnabled">true</item>
-
-        <item name="spark_animateChanges">true</item>
-    </style>
-
     <!-- progress bar style -->
     <style name="progressBarStyle" parent="@style/Theme.AppCompat">
         <item name="colorAccent">@color/btn_color</item>
