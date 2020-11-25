@@ -88,7 +88,8 @@
                     android:background="@drawable/edit_text_bg"
                     android:textColor="@color/black"
                     android:padding="16dp"
-                    android:text="@string/eur_value"
+                    android:hint="@string/hint"
+                    android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -135,13 +136,13 @@
                     android:id="@+id/latest_pln_value"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="16dp"
-                    android:paddingTop="16dp"
+                    android:background="@drawable/edit_text_bg"
                     android:textColor="@color/black"
+                    android:hint="@string/hint"
+                    android:padding="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="4.123243" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -151,7 +152,7 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="16dp"
@@ -161,131 +162,25 @@
             app:layout_constraintStart_toStartOf="@+id/pln_card"
             app:layout_constraintTop_toBottomOf="@+id/pln_card">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-                <FrameLayout
-                    android:id="@+id/eur_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:background="@drawable/spinner_bg"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="9dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_bg" />
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/swap"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1" />
 
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/appCompatImageView"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/eur"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/eur_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_margin="10dp"
-                            android:layout_marginEnd="145dp"
-                            android:text="@string/eur"
-                            android:textColor="#d7d7d7"
-                            android:textSize="16sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
-                            app:layout_constraintEnd_toStartOf="@+id/appCompatImageView2"
-                            app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
-                            app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/appCompatImageView2"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/dropdown"
-                            app:layout_constraintBottom_toBottomOf="@+id/eur_tv"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/eur_tv"
-                            app:layout_constraintTop_toTopOf="@+id/eur_tv" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </FrameLayout>
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/swap"
-                    app:layout_constraintBottom_toBottomOf="@+id/eur_spinner"
-                    app:layout_constraintEnd_toStartOf="@+id/pln_spinner"
-                    app:layout_constraintStart_toEndOf="@+id/eur_spinner"
-                    app:layout_constraintTop_toTopOf="@+id/eur_spinner" />
-
-                <FrameLayout
-                    android:id="@+id/pln_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:background="@drawable/spinner_bg"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="9dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/pln_image"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/pln"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/pln_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_margin="10dp"
-                            android:layout_marginEnd="145dp"
-                            android:text="@string/pln"
-                            android:textColor="#d7d7d7"
-                            android:textSize="16sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/pln_image"
-                            app:layout_constraintEnd_toStartOf="@+id/pln_spinner_img"
-                            app:layout_constraintStart_toEndOf="@+id/pln_image"
-                            app:layout_constraintTop_toTopOf="@+id/pln_image" />
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/pln_spinner_img"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/dropdown"
-                            app:layout_constraintBottom_toBottomOf="@+id/pln_tv"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/pln_tv"
-                            app:layout_constraintTop_toTopOf="@+id/pln_tv" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </FrameLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_bg" />
 
 
         </LinearLayout>

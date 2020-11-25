@@ -1,5 +1,6 @@
 package com.example.currencyconverter.ui.activity
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,10 @@ import com.example.currencyconverter.ui.viewModel.MainActivityViewModel
 import com.example.currencyconverter.utils.CustomProgressDialog
 import com.example.currencyconverter.utils.Resource
 import com.example.currencyconverter.utils.Utils
+import com.github.mikephil.charting.components.MarkerView
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.highlight.Highlight
+import com.github.mikephil.charting.utils.MPPointF
 import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.bottom_sheet_chart.*
@@ -80,6 +85,29 @@ class MainActivity : AppCompatActivity() {
                     .show()
             }
         })
+    }
+
+    inner class CustomMarkerView(context: Context, layoutResource: Int) : MarkerView(
+        context, layoutResource
+    ) {
+        private var mOffset: MPPointF? = null
+        override fun getOffset(): MPPointF {
+            if (mOffset == null) {
+                // center the marker horizontally and vertically
+                mOffset = MPPointF(
+                    0f,
+                    -height.toFloat() + com.github.mikephil.charting.utils.Utils.convertDpToPixel(8f)
+                )
+            }
+            return mOffset!!
+        }
+
+        override fun refreshContent(e: Entry?, highlight: Highlight?) {
+            /*date.text = dates[e?.x]
+            rate.text = "1 ${currencyRates[fromSelectedIndex].currencyCode} = ${e?.y} ${currencyRates[toSelectedIndex].currencyCode}"
+            */super.refreshContent(e, highlight)
+        }
+
     }
 
 }
