@@ -2,15 +2,16 @@ package com.example.currencyconverter.ui.activity
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.currencyconverter.R
 import com.example.currencyconverter.databinding.ActivityMainBinding
+import com.example.currencyconverter.ui.adapter.CurrencyAdapter
 import com.example.currencyconverter.ui.viewModel.MainActivityViewModel
-import com.example.currencyconverter.utils.CustomProgressDialog
-import com.example.currencyconverter.utils.Resource
-import com.example.currencyconverter.utils.Utils
+import com.example.currencyconverter.utils.*
 import com.github.mikephil.charting.components.MarkerView
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.highlight.Highlight
@@ -22,7 +23,7 @@ import kotlinx.android.synthetic.main.content_main.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var binding: ActivityMainBinding
 
     @Inject
@@ -30,11 +31,24 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainActivityViewModel by viewModels()
 
+    private var flagList: ArrayList<FlagList> =
+        ArrayList<FlagList>().apply {
+            this.add(eurFlag)
+            this.add(cadFlag)
+            this.add(plnFlag)
+            this.add(usdFlag)
+            this.add(mxnFlag)
+            this.add(audFlag)
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         progressDialog = CustomProgressDialog(this)
+        initList()
+        spinnerAdapter(flagList)
+        setSpinnerListeners()
         with(binding) {
             /*mid_market_view.setOnClickListener {
                 //this creates an instance of the bottom frag
@@ -108,6 +122,52 @@ class MainActivity : AppCompatActivity() {
             */super.refreshContent(e, highlight)
         }
 
+    }
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        p1?.let {
+            val getCurrency = (p0?.getItemAtPosition(p2) as FlagList).name
+
+            if (p0.id == R.id.from_spinner) {
+                viewModel.setFirstCurrencyValue(getCurrency)
+                first_currency_value.text = getCurrency
+            } else if (p0.id == R.id.to_spinner) {
+                viewModel.setSecondCurrencyValue(getCurrency)
+                second_currency_value.text = getCurrency
+            }
+        }
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+    }
+
+    private fun spinnerAdapter(arrayFlagList: ArrayList<FlagList>) {
+        val currencyAdapter = CurrencyAdapter(this, arrayFlagList)
+
+        from_spinner.adapter = currencyAdapter
+        to_spinner.adapter = currencyAdapter
+
+        arrayFlagList.forEachIndexed { index, flagList ->
+            if (flagList.name == eurFlag.name)
+                from_spinner.setSelection(index)
+            if (flagList.name == plnFlag.name)
+                to_spinner.setSelection(index)
+        }
+    }
+
+    private fun initList() {
+        flagList = ArrayList()
+        flagList.add(eurFlag)
+        flagList.add(plnFlag)
+        flagList.add(mxnFlag)
+        flagList.add(usdFlag)
+        flagList.add(audFlag)
+
+    }
+
+    private fun setSpinnerListeners() {
+        from_spinner.onItemSelectedListener = this
+        to_spinner.onItemSelectedListener = this
     }
 
 }
