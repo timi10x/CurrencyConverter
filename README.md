@@ -1,4 +1,4 @@
 # CurrencyConverter
-Currency Converter for CowryWise hiring stage
+Currency Converter app
 
 ![preview1.png](preview1.png)
