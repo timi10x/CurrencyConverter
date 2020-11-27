@@ -72,17 +72,14 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     private fun setupObservers() {
         //observing the livedata call from viewModel
-        viewModel.getLatest.observe(this, {
+        viewModel.res.observe(this, {
             //checking network state for device
             if (Utils.isOnline(this)) {
 
                 when (it.status) {
                     Resource.Status.SUCCESS -> {
                         progressDialog.hideDialog()
-
-                        //set value from api if successful
-                        //to textview
-                        latest_pln_value.text = it.data?.rates?.pLN.toString()
+                        //latest_pln_value.text = it.data?.rates?.pLN.toString()
 
                     }
                     Resource.Status.ERROR -> {
